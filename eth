@@ -1,0 +1,23 @@
+from etherpad_lite import EtherpadLiteClient
+from datetime import datetime
+etherclient = EtherpadLteClient(base_params={'apikey': 'Add api key from File'})
+
+new_pad = etherclient.createPad(padID='mynewpad', text='Hello Everyone, How are you')
+print('Your new pad is :',new_pad)
+
+createAuthor = etherclient.createAuthor(name='CloudUser')
+print(createAuthor)
+
+padcount = etherclient.padUsersCount(padID='mynewpad')
+print(padcount)
+
+timestamp = etherclient.getLastEdited(padId='mynewpad')
+print(timestamp)
+lastedit = timestamp['lastEdited']
+
+date_conversation = datetime.fronttimestamp(lastedit/1000.0)
+print("date_time:", date_conversation)
+
+
+delete_pad = ethercliet.deletePad(padId='mynewpad')
+print(delete_pad)
